@@ -18,9 +18,7 @@ class App extends Component {
 
   collector = (newContact) => {
     if (
-      this.state.contacts.some(
-        (item) => item.name.trim() === newContact.name.trim()
-      )
+      this.state.contacts.find((contact => contact.name === newContact.name))
     ) {
       alert("такий контакт уже існує");
       return;
